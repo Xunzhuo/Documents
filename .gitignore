@@ -1,10 +1,32 @@
-Thumbs.db
+# Ignore docs files
+_site
+.ruby-version
+.jekyll-metadata
+.vscode
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+# *.lock
+
+# OS or Editor folders
+*.scssc
 .DS_Store
-.dist
-.tmp
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+.asset-cache
 .sass-cache
-npm-debug.log
-node_modules
-builds
-package-lock.json
 public
+# Folders to ignore
+node_modules

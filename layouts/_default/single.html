@@ -1,47 +1,65 @@
 {{ define "main" }}
+{{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
+{{ $hasSidebar := or ($hasToc) (.Params.series) }}
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2 {{ if not $hasSidebar }} {{- print "lg:col-start-2" -}} {{ end }} lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">{{ .Title }}</h1>
+        {{ partial "components/post-metadata" . }}
+        
+        {{ $featured := partial "utils/get-featured" . }}
+        {{ with $featured }}
+        <div class="my-4">
+            {{ . }}
+        </div>
+        {{ end }}
 
-{{ partial "page-title.html" . }}
+        <div class="content">
+            {{ .Content}}
+        </div>
+        {{ with .GetTerms "tags" }}
+        {{ partial "components/post-tags" . }}
+        {{ end }}
+        
+        {{ if or .Site.Params.repoURL .Site.Params.repoEditURL }}
+        {{ partial "components/post-edit" . }}
+        {{ end }}
+        
+        {{ with .GetTerms "authors" }}
+        {{ partial "components/post-author" . }}
+        {{ end }}
+        
+        {{ partial "components/post-footer" . }}
+        {{ partial "comment.html" . }}
+    </div>
+    {{ if $hasSidebar}}
+    <div class="col-span-2">
+        {{ if .GetTerms "series" }}
+        {{ partial "components/post-series" . }}
+        {{ end }}
+        {{ if $hasToc }}
+        {{ partial "components/post-toc" . }}
+        {{ end }}
+    </div>
+    {{ end }}
 
-<section class="page-wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="post post-single">
-					<h2 class="post-title">{{ .Title }}</h2>
-					<div class="post-meta">
-						<ul>
-              <li><i class="ion-calendar"></i> {{ .PublishDate.Format "January 2, 2006" }}</li>
-              <li><i class="ion-android-people"></i>
-                {{ i18n "posted_by" }}
-                {{if site.Params.multi_author}}
-                {{ range $index, $elements:= .Params.Author }}{{ if ne $index 0 }}, {{ end }}<a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-                {{else}}
-                <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author }}</a>
-                {{end}}
-              </li>
-              <li><i class="ion-pricetags"></i> 
-                {{ range $index, $elements:= .Params.Tags }}
-                {{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | lower }}">{{ . | humanize }}</a>
-								{{ end }}
-              </li>
-            </ul>
-					</div>
-					<div class="post-thumb">
-						<img class="img-responsive" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-					</div>
-					<div class="post-content post-excerpt">
-						{{ .Content }}
-					</div>
-					<div class="post-comments">
-						{{ template "_internal/disqus.html" . }}
-					</div>
-				</div>
-			</div>
-      <div class="col-md-4">
-        {{ partial "blog-sidebar.html" . }}
-      </div>
-		</div>
-	</div>
-</section>
-
+    {{ $related := .Site.RegularPages.Related . | first 6 }}
+    {{ with $related }}
+    <div
+        class="col-span-2 {{ if not $hasSidebar }} {{- print "lg:col-start-2" -}} {{ end }} lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">{{ i18n "seeAlso" }}</h2>
+        <div class="content">
+            {{ range . }}
+            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            <br />
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
 {{ end }}
