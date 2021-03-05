@@ -2,7 +2,7 @@
 # Site Settings
 
 baseURL = "https://www.liuxunzhuo.com/"
-title = "BIT`s World"
+title = "Bit`s World"
 languageCode = "en"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
