@@ -6,9 +6,9 @@ theme: eureka
 # Uncomment when installing using Hugo Modules
 # theme: github.com/wangchucheng/hugo-eureka
 
-paginate: 3
+paginate: 5
 copyright: >
-  &copy; 2021 <a href="https://www.liuxunzhuo.com/">Bit Liu</a>
+  &copy; 2021 <a href="https://www.liuxunzhuo.com/">BIT LIU</a>
 enableEmoji: true
 enableGitInfo: false
 summaryLength: 1
