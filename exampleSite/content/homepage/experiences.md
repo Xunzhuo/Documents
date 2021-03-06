@@ -9,7 +9,7 @@ experiences:
     dates: '2020 - Present'
     location: China
     writeup: >
-      Build Cloud Native Platform
+      Work on Building a Cloud Native Platform.
       
   - title: Bachelor of Software Engineering
     organization:
@@ -18,7 +18,7 @@ experiences:
     dates: '2018 - 2022'
     location: China
     writeup: >
-      Study Computer Science at School
+      Study Software Engineering at University Of Electronic Science And Technology Of China.
 
 weight: 3
 widget:
