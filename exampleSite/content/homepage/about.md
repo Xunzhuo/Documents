@@ -53,12 +53,12 @@ widget:
 ## Skills
 
 ### Cloud Native:
-- Scheduling & Orchestration: Kubernetes
-- Container Runtime: Docker
-- Service Proxy: Envoy
-- Service Mesh: Istio, Consul
-- Observability and Analysis: Promethues
-- Remote Procedure Call: gRPC
+- Scheduling & Orchestration: **Kubernetes**
+- Container Runtime: **Docker**
+- Service Proxy: **Envoy**
+- Service Mesh: **Istio, Consul**
+- Observability and Analysis: **Promethues**
+- Remote Procedure Call: **gRPC**
 
 ### Coding Languages:
-- Golang - Java - C++ - Python
+- **Golang - Java - C++ - Python**
