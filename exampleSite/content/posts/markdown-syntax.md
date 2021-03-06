@@ -1,19 +1,14 @@
 ---
-title: Markdown Syntax Guide
-description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+title: Envoy负载均衡原理
+description: 本文是对Envoy的负载均衡算法的探究
 toc: true
 authors:
   - Hugo Authors
 tags:
-  - markdown
-  - css
-  - html
-  - themes
-categories:
-  - themes
-  - syntax
+  - Envoy
+  - 负载均衡
+categories: Envoy
 series:
-  - Themes Guide
 date: '2019-03-11'
 lastmod: '2019-03-11'
 draft: false
