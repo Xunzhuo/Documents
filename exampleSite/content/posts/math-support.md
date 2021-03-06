@@ -1,5 +1,5 @@
 ---
-title: Git WorkFlow
+title: 【团队协作】Git WorkFlow
 description:
 toc: true
 authors:
@@ -9,8 +9,8 @@ tags:
   - Workflow
 categories: 团队协作
 series:
-date: '2020-11-20T22:52:56+08:00'
-lastmod: '2020-11-20T22:52:56+08:00'
+date: '2019-11-20T22:52:56+08:00'
+lastmod: '2019-11-20T22:52:56+08:00'
 featuredImage:
 draft: false
 ---

@@ -1,5 +1,5 @@
 ---
-title: 【istio】从旧石器时代到服务网格时代
+title: 【Istio】从旧石器时代到服务网格时代
 description: 其实要彻底了解 Istio 以及服务网格出现的背景，就得从计算机发展的早期说起。
 toc: true
 authors:
