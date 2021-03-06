@@ -2,7 +2,7 @@
 title: Bit Liu(刘训灼)
 role: Software Engineer(软件工程师)
 avatar: images/bit.jpg
-bio: Aenean vel bibendum quam. Aliquam at mollis quam. Proin efficitur.
+bio: Explore the future of Cloud Native with me.
 organization:
   name: Tencent(腾讯)
   url: https://www.qq.com/
