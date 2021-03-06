@@ -9,18 +9,12 @@ experiences:
     dates: '2020 - Present'
     location: China
     writeup: >
-      Work on Cloud Native
-
-      - Suspendisse lacinia mauris a laoreet vehicula.
-
-      - Aenean tincidunt enim vitae ante blandit tempor.
-
-      - Nam tincidunt diam quis lorem rutrum ullamcorper.
+      Build Cloud Native Platform
       
   - title: Bachelor of Software Engineering
     organization:
       name: UESTC
-      url: https://example.org
+      url: https://www.uestc.edu.cn/
     dates: '2018 - 2022'
     location: China
     writeup: >
