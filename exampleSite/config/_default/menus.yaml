@@ -1,6 +1,6 @@
 main:
-  - name: About
-    url: '#about'
+  - name: Home
+    url: '/'
     weight: 1
   - name: Posts
     url: /posts/
@@ -8,3 +8,6 @@ main:
   - name: Docs
     url: /docs/
     weight: 3
+  - name: Projects
+    url: /projects/
+    weight: 4
