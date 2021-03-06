@@ -3,7 +3,7 @@ title: 【团队协作】Git WorkFlow
 description:
 toc: true
 authors:
-  - example-author
+  - Example Author
 tags: 
   - Git
   - Workflow
