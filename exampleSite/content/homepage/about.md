@@ -3,9 +3,9 @@ title: Bit Liu (刘训灼）
 draft: false
 role: Software Engineer
 avatar: images/bit.jpg
-bio: Explore the future of Cloud Native, Step by Step, Move by Move.
+bio: Welcome to my site 😀! I am a believer of Cloud Native☁, a backend engineer🌙, a life explorer🚀, a guitar player🎸.
 organization:
-  name: Tencent （腾讯）
+  name: Tencent （腾讯）🐧
   url: https://www.tencent.com/
 social:
   - icon: envelope
@@ -48,19 +48,20 @@ widget:
 
 ## Self Introduction
 
-Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat id. Aenean ac velit massa. Vivamus feugiat dui at magna viverra, ut dictum nunc rutrum. Duis eget sapien finibus, lobortis orci id, vestibulum tellus. Maecenas lobortis urna libero, quis fermentum lectus lobortis nec. Nullam laoreet volutpat libero, ac mattis magna ullamcorper quis. Duis eget ipsum eu nisi mattis cursus et vitae turpis.
+" Talk is Cheap, Show me the code "
 
-Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Aenean a massa in lacus venenatis vestibulum. Duis vel sem quis elit iaculis consectetur et quis dolor. Morbi eu ipsum hendrerit, malesuada ante sed, dapibus est. Suspendisse feugiat nulla ut gravida convallis. Phasellus id massa posuere, rhoncus justo ut, porttitor dolor. Nulla ultrices malesuada egestas. Nunc fermentum tincidunt sem ac vulputate. Donec mollis sollicitudin justo eget varius. Donec ornare velit et felis blandit, id molestie sapien lobortis. Morbi eget tristique justo. Mauris posuere, nibh eu laoreet ultricies, ligula erat iaculis sapien, vel dapibus lacus libero ut diam. Etiam viverra ante felis, et scelerisque nunc pellentesque vitae. Praesent feugiat dictum molestie.
+## Skills
 
-## Details  
+Cloud Native:
+- Scheduling & Orchestration: Kubernetes
+- Container Runtime: Docker
+- Service Proxy: Envoy
+- Service Mesh: Istio, Consul
+- Observability and Analysis: Promethues
+- Remote Procedure Call: gRPC
 
-Nunc pellentesque vitae:
-- Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.
-- Donec dignissim leo in mollis faucibus.
-- Donec blandit lacus a pellentesque fermentum.
-
-Donec mollis sollicitudin:
-- Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.
-- Aliquam eu leo vitae justo aliquam tincidunt.
-- Fusce non massa id augue interdum feugiat sed et nulla.
-- Vivamus molestie augue in tristique laoreet.
+Coding Languages:
+- Golang
+- Java
+- C++
+- Python
