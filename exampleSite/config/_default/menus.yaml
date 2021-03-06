@@ -1,6 +1,6 @@
 main:
   - name: Home
-    url: '/#'
+    url: '#about'
     weight: 1
   - name: Posts
     url: /posts/
