@@ -3,7 +3,7 @@ title: Vintage
 draft: false
 slogan: Stay Hugry, Stay Foolish.
 imgLeft: images/kube.png
-imgRight: images/icons.png
+imgRight: images/istio.jpg
 
 weight: 4
 widget:
