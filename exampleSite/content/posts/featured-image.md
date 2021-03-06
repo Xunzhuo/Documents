@@ -1,35 +1,139 @@
 ---
-title: Featured Image
-description: Post with featured image.
+title: 【istio】从旧石器时代到服务网格时代
+description: 其实要彻底了解 Istio 以及服务网格出现的背景，就得从计算机发展的早期说起。
 toc: true
 authors:
   - Example Author
 tags:
-  - image
+  - Istio
+  - 服务网格
+  - Service Mesh
 categories:
-  - themes
+  - Istio
 series:
-  - Themes Guide
 date: '2020-05-26'
 lastmod: '2020-05-26'
-featuredImage: images/hero-right.jpg
+featuredImage: images/istio.jpg
 draft: false
 ---
 
-Maecenas maximus, elit in ornare porttitor, nisi eros hendrerit nisl, sed fermentum nulla urna blandit tellus.
+其实要彻底了解 Istio 以及服务网格出现的背景，就得从计算机发展的早期说起。
 
-<!--more-->
+![img](https://i.loli.net/2019/07/08/5d233b175fca440328.jpg)
 
-## Nullam tempor lectus quis
+下面这张图展示的通信模型变种其实从计算机刚出现不久的上世纪50年代开始就得到广泛应用，那个时候，计算机很稀有，也很昂贵，人们手动管理计算机之间的连接，图中绿色的网络栈底层只负责传输电子信号和字节码：
 
-Aenean vehicula non elit id varius. Mauris condimentum lacinia mollis. Nullam quis cursus metus, eget mattis erat. Aliquam nec ante lacus. In tellus augue, iaculis vitae sollicitudin quis, tempor nec urna. Aenean ut fermentum erat, vel gravida ligula. Etiam sed ex aliquet, egestas nibh eu, iaculis mi. Nunc sit amet fermentum ex. Sed convallis ac arcu tristique rhoncus. Suspendisse potenti.
+![img](https://i.loli.net/2019/07/08/5d233b176e89f55060.jpg)
 
-Proin justo purus, porttitor et semper ut, commodo et nibh. Nam malesuada id arcu in tempus. Ut ornare vestibulum ultrices. Nullam tempor lectus quis ornare viverra. Vestibulum fringilla turpis ac leo fermentum, et dictum nisi consectetur. Integer ullamcorper fringilla mi, non volutpat sapien ultrices vel. Phasellus at blandit neque, pulvinar rutrum ante.
+------
 
-Etiam auctor, elit vel pretium consequat, orci magna aliquet dolor, quis varius felis purus ut elit. Sed ultrices feugiat blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut accumsan pulvinar purus et ornare. Vestibulum et tortor eget lacus hendrerit porttitor. Cras dapibus ac est posuere mattis. Pellentesque eu ligula ultricies, interdum nulla vel, sollicitudin ligula. Suspendisse sit amet massa sed dui placerat pharetra. Vestibulum massa sem, congue in vehicula vitae, aliquam eu mi. Suspendisse eget laoreet velit. Cras felis enim, molestie in enim nec, mollis venenatis lectus. Donec tincidunt, mi vel interdum varius, urna metus aliquet velit, ut venenatis nulla orci nec lectus. Nam id tortor imperdiet, tempor massa eget, congue nisl. Suspendisse venenatis facilisis orci, non scelerisque risus volutpat sit amet.
+随着计算机变得越来越普及，计算机的价格也没那么贵了，计算机之间的连接数量和相互之间通信的数据量出现了疯狂式的增长，人们越来越依赖网络系统，工程师们必须确保他们开发的服务能够满足用户的要求。于是，如何提升系统质量成为人们关注的焦点。计算机需要知道如何找到其他节点，处理同一个通道上的并发连接，与非直接连接的计算机发生通信，通过网络路由数据包、加密流量等等，除此之外，还需要流量控制机制，流量控制可以防止下游服务器给上游服务器发送过多的数据包。
 
-## Vestibulum et tortor eget
+于是，在一段时期内，开发人员需要在自己的代码里处理上述问题。在下面这张图的示例中，为了确保下游服务器不给其他上游服务造成过载，应用程序需要自己处理流量控制逻辑，于是网络中的流量控制逻辑和业务逻辑就混杂在一起：
 
-Aliquam posuere diam non ligula tristique congue. Donec dignissim eu justo sed dictum. Praesent at massa erat. Praesent mollis viverra velit. Aliquam maximus pharetra massa a efficitur. Sed tempus egestas purus sit amet tempor. Donec porttitor varius nisi, eu venenatis risus gravida id. Pellentesque blandit nunc non urna consectetur commodo. Sed at feugiat felis, sit amet malesuada nunc. Curabitur in tempor nisl. Pellentesque accumsan est orci, in commodo felis accumsan facilisis. Nulla maximus suscipit posuere. Nulla et consequat mauris, fermentum ultricies tellus.
+![img](https://i.loli.net/2019/07/08/5d233b17d896c84739.jpg)
 
-Maecenas consectetur ac libero vitae congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec tortor eu lectus placerat varius. Mauris a nisi consectetur, ornare dolor ut, rutrum ligula. Sed enim nisl, fermentum a dictum vel, vestibulum ut odio. Suspendisse laoreet quis urna eu vestibulum. Maecenas commodo augue ex, eu egestas nulla aliquet ut. Cras aliquam dui ipsum, nec sodales erat convallis sit amet. Donec porttitor posuere hendrerit. Sed imperdiet at purus eget tempus. In ac est urna.
+幸运的是，到了上世纪60年代末，TCP/IP 协议栈的横空出世解决了可靠传输和流量控制等问题，此后尽管网络逻辑代码依然存在，但已经从应用程序里抽离出来，成为操作系统网络栈的一部分，工程师只需要按照操作系统的调用接口进行编程就可以解决基础的网络传输问题：
+
+![img](https://i.loli.net/2019/07/08/5d233b17c802021262.jpg)
+
+进入21世纪，计算机越来越普及、也越来越便宜，相互连接的计算机节点越来越多，业界出现了各种网络系统，如分布式代理和面向服务架构：
+
+![img](https://i.loli.net/2019/07/08/5d233b182d8e973698.jpg)
+
+分布式为我们带来了更高层次的能力和好处，但却也带来了新的挑战。这时候工程师的重心开始转移到应用程序的网络功能上面，这时候的服务之间的对话以“消息”为传输单元，当工程师们通过网络进行调用服务时，必须能为应用程序消息执行超时、重试、确认等操作。
+
+于是，有工程师是开始尝试使用消息主干网（messaging backbone）集中式地来提供控制应用程序网络功能的模块，如服务发现、负载均衡、重试等等，甚至可以完成诸如协议调解、消息转换、消息路由、编排等功能，因为他们觉得如果可以将这些看似同一层面的内容加入到基础设施中，应用程序或许会更轻量、更精简、更敏捷。这些需求绝对是真实的，[ESB(Enterprise Service Bus)](https://en.wikipedia.org/wiki/Enterprise_service_bus) 演变并满足了这些需要。ESB 在是2005年被提出的，它的概念特别类似于计算机硬件概念里的 USB, USB 作为电脑中的标准扩展接口，可以连接各种外部设备；而 ESB 则就把路由管理、协议转换、策略控制等通用应用程序网络功能加到现有的集中式消息总线里。
+
+![img](https://i.loli.net/2019/07/08/5d233b17e632692216.jpg)
+
+这看似行得通！
+
+可是，在实施 SOA 架构的时候，工程师们发现这种架构有点儿用力过度、矫枉过正了。集中式的消息总线往往会成为架构的瓶颈，用它来进行流量控制、路由、策略执行等并不像我们想象那么容易，加上组织结构过于复杂，强制使用专有的格式，需要业务逻辑实现路由转换和编排等功能，各个服务之间耦合度很高，在敏捷运动的时代背景下，ESB 架构已经无法跟上时代的节奏了。
+
+------
+
+在接下来的几年内，REST 革命和 API 优先的思潮孕育了微服务架构，而以 docker 为代表的容器技术和以 k8s 为代表的容器编排技术的出现促进了微服务架构的落地。事实上，微服务时代可以以 k8s 的出现节点划分为“前微服务时代”和“后微服务时代”：
+
+![img](https://i.loli.net/2019/07/08/5d233b18396f082630.jpg)
+
+“前微服务时代”基本上是微服务作为用例推动容器技术的发展，而到“后微服务时代”，特别是成为标准的 k8s 其实在驱动和重新定义微服务的最佳实践，容器和 k8s 为微服务架构的落地提供了绝佳的客观条件。
+
+微服务架构有很多好处，比如：
+
+- 快速分配计算资源
+- 快速部署升级迭代
+- 易于分配的存储
+- 易于访问的边界等等
+
+但是作为较复杂的分布式系统，微服务架构给运维带来了新的挑战。当工程师开始接尝试微服务架构，必须考虑如何进行微服务治理。狭义的“微服务治理”，关注的是微服务组件之间的连接与通讯，例如服务注册发现、东西向路由流控、负载均衡、熔断降级、遥测追踪等。
+
+历史总是惊人的相似，面对类似的问题，第一批采用微服务架构的企业遵循着与第一代网络计算机系统类似的策略，也就是说，解决网络通信问题的任务又落在了业务工程师的肩上。
+
+![img](https://i.loli.net/2019/07/08/5d233b184b76f24616.jpg)
+
+这个时候出现了看到诸如 Netflix [OSS 堆栈](https://netflix.github.io/)、Twitter [Finagle](https://github.com/twitter/finagle) 以及赫赫有名的 [Spring Cloud](https://spring.io/projects/spring-cloud) 这样的框架和类库帮助业务工程师快速开发应用程序级别的网络功能，只需要写少量代码，就可以把服务发现、负载均衡、路由管理、遥测收集、监控告警等这些功能实现：
+
+![img](https://i.loli.net/2019/07/08/5d233ef9733af85293.jpg)
+
+但是如果仔细想一下的话，就会发现这样编写微服务程序的问题也很明显。
+
+这些类库或者框架是特定语言编写的，并且混合在业务逻辑中（或在整个基础设施上层分散的业务逻辑中）。姑且不说类库和框架的学习成本和门槛，我们知道微服务架构问世的一个承诺就是不同的微服务可以采用不同的编程语言来编写，可是当你开始编写代码的时候会发现有些语言还没有提供对应的类库。这是一个尴尬的局面！这个问题非常尖锐，为了解决这个问题，大公司通常选择就是统一编程语言来编写微服务代码。另外的问题是，怎么去做框架升级？框架不可能一开始就完美无缺，所有功能都齐备，没有任何 BUG。升级一般都是逐个版本递进升级，一旦出现客户端和服务器端版本不一致，就要小心维护兼容性。实际上，每做出一次变更都需要进行深度的集成和测试，还要重新部署所有的服务，尽管服务本身并没有发生变化。
+
+------
+
+![img](https://i.loli.net/2019/07/08/5d233b185a0f325924.jpg)
+
+与网络协议栈一样，工程师们急切地希望能够将分布式服务所需要的一些特性放到底层的平台中。这就像工程师基于 HTTP 协议开发非常复杂的应用，无需关心底层 TCP 如何传输控制数据包。在开发微服务时也是类似的，业务工程师们聚焦在业务逻辑上，不需要浪费时间去编写服务基础设施代码或管理系统用到的软件库和框架。把这种想法囊括到之前架构中，就是下边这幅图所描述的样子：
+
+![img](https://i.loli.net/2019/07/08/5d235081238ea81414.jpg)
+
+不过，在网络协议栈中加入这样的一个层是不实际的，貌似可以尝试一下代理的方案！事实上，确实有一些先驱者曾经尝试过使用代理的方案，例如 nginx/haproxy/proxygen 等代理。也就是说，一个服务不会直接与上游服务发生连接，所有的网络流量都会流经代理，代理会拦截服务之间的请求并转发到上游服务。可是，那时候代理的功能非常简陋，很多工程师尝试之后觉得没有办法实现服务的客户端所有需求。
+
+在这样的诉求下，第一代的 sidecar 出现了，sidecar 扮演的角色和代理很像，但是功能就齐全很多，基本上原来微服务框架在客户端实现的功能都会有对应的功能实现：
+
+![img](https://i.loli.net/2019/07/08/5d233ef980d2869572.jpg)
+
+但是第一代 sidecar 有一个重要的限制，它们是专门为特定基础设施组件而设计的，因此无法通用，例如，Airbnb 的 Nerve 和 Synapse，它们工作的基础是服务一定是注册到 ZooKeeper 上的，而 Netflix 的 Prana 要求使用 Netflix 自己的 Eureka 注册服务。
+
+随着微服务架构日渐流行，新一代的 sidecar 也很快出现了，它可以用在不同基础设施组件上，我们把他们叫做通用型 sidecar。其中 [Linkerd](https://linkerd.io/) 是业界第一个通用型 sidecar，它是基于 Twitter 微服务平台而开发，实际上也正是它创造了 Service Mesh 即服务网格的概念。2016年1月15日，Linkerd-0.0.7发布，随后加入 CNCF，1.0版本于2017年4月份发布；随后出现的通用型 sidecar 就是大名鼎鼎来自于 Lyft 的 [envoy](https://www.envoyproxy.io/) ，Lyft 在2016年9月发布了 envoy 的1.0版本，2017年9月 envoy 加入 CNCF；最后一个比较新的通用型 sidecar 来自于我们熟悉的 nginx，叫做 [NGINX Mesh](https://www.nginx.com/products/nginx-service-mesh/)，2017年9月发布了第一个版本。
+
+------
+
+有了通用型 sidecar，每个微服务都会有一个 sidecar 代理与之配对，服务间通信都是通过 sidecar 代理进行的。正如我们在下这幅图上看到的那样，sidecar 代理之间的连接形成了一种网格网络：
+
+![img](https://i.loli.net/2019/07/08/5d23437409be992563.jpg)
+
+这就是服务网格概念的来源，下面是服务网格概念的官方定义，它不再把 sidecar 代理看成单独的组件，并强调了这些 sidecar 代理所形成的网络的重要性：
+
+> A service mesh is a dedicated infrastructure layer for making service-to-service communication safe, fast, and reliable.
+
+实际上，就像 TCP/IP 网络栈为我们抽象了网络传输的细节一样，有了服务网格，我们不需要再担心微服务之间通信的各种网络诉求，如服务发现和负载均衡、流量管理、策略执行、监控告警等。
+
+------
+
+服务网格的概念出现之后，有部分工程师们开始将微服务部署到更为复杂的基础平台（如 K8s、Mesos）上，并开始使用这些基础平台提供的网络工具来管理整个服务网格里的所有 sidecar，也就是从一系列独立运行的 sidecar 代理转向使用集中式的控制面板来管理所有的 sidecar 代理。
+
+在 Google 内部，很早通过一个分布式平台对微服务进行管理，通过代理处理内部与外部的协议，这些代理的背后是一个控制面板，它在开发者与运维人员之间提供了一层额外的抽象，在这层抽象之上对跨语言与系统平台的服务进行管理。经过实战的检验，这套架构已经证明它能够确保高伸缩、低延迟等特性，并为 Google 内部的各项服务提供了丰富的特性。
+
+在2016年，Google 决定开发一个对微服务进行管理的开源项目，它与 Google 内部使用的平台有很大的相似性，该项目被命名为“Istio”, Istio 在希腊语中的意思是“启航”。就在 Google 启动 Istio 项目的几乎同一时间，IBM 也发布了一个名为 [Amalgam8](https://github.com/amalgam8) 的开源项目，这是一个基于 Nginx 代理技术，为微服务提供基于内容路由方案的项目。随后，Google 和 IBM 意识到这两个项目在使用场景与产品愿景上存在很大一部分交集，于是答应成为合作伙伴，IBM 放弃 Amalgam8 的开发，与 Google 共同基于 Lyft 公司开源的 envoy 项目打造 [Istio](https://istio.io/) 这款产品。
+
+Istio 的出现将服务网格的概念彻底发扬光大，它创新性地将服务网格从逻辑上划分为“数据面板”和“控制面板”：
+
+1. 随着分布式应用一起部署的 sidecar 成为数据平面，它能够拦截网络请求并控制服务之间的通信；
+2. 而集中式的管理模块成为控制平面，它提供服务发现、流量管理、遥测数据收集以及证书轮换等功能；
+
+在整个网络里面，所有的流量都在 sidecar 代理的控制当中，所有的 sidecar 代理都在控制面板控制当中，因此，可以通过控制面板控制整个服务网格，这是 Istio 带来的最大革新。
+
+![img](https://i.loli.net/2020/12/19/AI3K6W8DdT4hOZ2.png)
+
+就如我们在上面这幅图中看到的那样，Istio 默认使用 envoy 作为 sidecar 代理，事实上，Istio 大量利用了 envoy 内建特性，例如服务发现与负载均衡、流量拆分、故障注入、熔断器以及金丝雀发布等，而在控制平面 Istio 也分为四个主要模块：
+
+1. Pilot 为 sidecar 代理提供服务发现和配置下发功能；它将控制流量的高级路由规则转换为特定于 envoy 的配置，并在运行时将它们传播到 envoy；
+2. Mixer 负责在服务网格上执行访问控制和策略检查，并从 envoy 代理收集遥测数据，提取请求级属性并发送到 Mixer 进行评估；
+3. Citadel 证书分发和管理中心；通过内置身份和凭证管理，用于升级服务网格中未加密的流量，并为运维人员提供基于服务标识的访问策略；
+4. Galley 统一的配置消化、验证和分发中心；未来的版本中 Galley 将承担更多的责任，从而将其他 Istio 组件与从底层平台的耦合中彻底释放出来；
+
+2018年7月31日，Istio-1.0正式发布，距离最初的0.1版本发布以来已经过了一年多时间。从0.1发布开始，Istio 就在蓬勃壮大的社区、贡献者和用户的帮助下迅速发展。现在已经有许多公司已经或者开始尝试将 Istio 应用于生产环境中，并通过 Istio 提供的洞察力和控制力获得了真正的价值。Istio 帮助大型企业和快速发展的创业公司，如 eBay、Auto Trader UK、Descartes Labs、HP FitStation、Namely、PubNub 和 Trulia 使用 Istio 从头开始连接、管理和保护他们的微服务。
+
+同时，整个 Istio 生态系统也不断的扩张，envoy 增加了许多对生产级别的服务网格至关重要的功能，包括与许多可观察性工具的集成，像 Datadog、SolarWinds、Sysdig、Google Stackdriver 和 Amazon CloudWatch 这样的可观察性提供商也编写了插件来将 Istio 与他们的产品集成在一起；Red Hat 构建的 [Kiali](https://www.kiali.io/) 为网格管理和可观察性提供了良好的用户体验；[Knative](https://github.com/knative) 无服务化项目也正基于 Istio 开发下一代下一代流量路由堆栈；[Apigee](https://cloud.google.com/apigee/) 也宣布计划在他们的 API 管理解决方案中使用 Istio。
