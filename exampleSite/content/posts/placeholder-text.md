@@ -1,6 +1,6 @@
 ---
 title: 【底层技术】从 Namespace 和 CGroup 搞懂Docker原理
-description: Lorem Ipsum Dolor Si Amet
+description: Namespace 和 CGroup 到底是怎么来隔离 Docker 容器进程的呢？今天我们就来一探究竟
 toc: true
 authors:
   - Example Author

@@ -13,7 +13,6 @@ categories:
 series:
 date: '2020-05-26'
 lastmod: '2020-05-26'
-featuredImage: images/istio.jpg
 draft: false
 ---
 
