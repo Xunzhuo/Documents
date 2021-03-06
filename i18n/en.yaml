@@ -1,5 +1,5 @@
 readMore:
-  other: Read More
+  other: Read More Blogs
 readingTime:
   other: '{{ .ReadingTime }} min read'
 toc:
