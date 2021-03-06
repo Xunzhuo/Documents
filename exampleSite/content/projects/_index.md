@@ -2,12 +2,14 @@
 title: Projects
 ---
 
-### GitHub 🚀
+## GitHub 🚀
 
 #### Personal 👨‍🎓
 
 + [Algorithm Guide](https://github.com/Xunzhuo/Algorithm-Guide) : BITLIU`s Tutorials of Algorithm and Data Structure🚀🚀🚀
 + [Coder](https://github.com/Xunzhuo/Coder) : A fast、pure、practical、elegant Hexo theme for Developers🔥🔥🔥
+
+> Other personal projects can be found in [GitHub](https://github.com/xunzhuo)👈
 
 #### Well-Known 🌞
 
@@ -19,7 +21,7 @@ title: Projects
 + gRPC : The C based gRPC (C++, Python, Ruby, Objective-C, PHP, C#)
 + Prometheus : The Prometheus monitoring system and time series database.
 
-### Work 🏠
+## Work 🏠
 
 > Detailed information is not allowed, I just describe aspects of my Work.
 
