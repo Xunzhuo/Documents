@@ -7,13 +7,7 @@ main:
     weight: 2
   - name: Docs
     url: /docs/
-    weight: 3
+    weight: 4
   - name: Projects
     url: /projects/
-    weight: 4
-  - name: Categories
-    url: /categories/
-    weight: 5
-  - name: Tags
-    url: /tags/
-    weight: 6
+    weight: 3
