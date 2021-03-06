@@ -3,7 +3,7 @@ title: Bit Liu (刘训灼）
 draft: false
 role: Software Engineer
 avatar: images/bit.jpg
-bio: Welcome to my site 😀! I am a believer of Cloud Native☁, a backend engineer🌙, a life explorer🚀, a guitar player🎸.
+bio: I am a believer of Cloud Native☁, a backend engineer🌙, a life explorer🚀, a guitar player🎸
 organization:
   name: Tencent （腾讯）🐧
   url: https://www.tencent.com/
@@ -48,11 +48,11 @@ widget:
 
 ## Self Introduction
 
-" Talk is Cheap, Show me the code "
+#### " Talk is Cheap, Show me the code "
 
 ## Skills
 
-Cloud Native:
+### Cloud Native:
 - Scheduling & Orchestration: Kubernetes
 - Container Runtime: Docker
 - Service Proxy: Envoy
@@ -60,8 +60,5 @@ Cloud Native:
 - Observability and Analysis: Promethues
 - Remote Procedure Call: gRPC
 
-Coding Languages:
-- Golang
-- Java
-- C++
-- Python
+### Coding Languages:
+- Golang Java C++ Python
