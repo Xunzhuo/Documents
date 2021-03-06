@@ -3,7 +3,7 @@ title: Bit Liu (刘训灼）
 draft: false
 role: Software Engineer
 avatar: images/bit.jpg
-bio: Hi forks! I am a believer of Cloud Native☁ , a backend engineer🌙 , a life explorer🚀 , a guitar player🎸
+bio: Hi forks! I am a believer of Cloud Native ☁ , a backend engineer 🌙 , a life explorer 🚀 , a guitar player 🎸
 organization:
   name: Tencent （腾讯）🐧
   url: https://www.tencent.com/
