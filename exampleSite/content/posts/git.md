@@ -1,5 +1,5 @@
 ---
-title: 【团队协作】Git WorkFlow
+title: 【团队协作】GitHub WorkFlow
 description:
 toc: true
 authors:
