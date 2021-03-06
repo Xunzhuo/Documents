@@ -11,7 +11,7 @@ copyright: >
   &copy; 2021 <a href="https://www.liuxunzhuo.com/">Bit Liu</a>
 enableEmoji: true
 enableGitInfo: false
-summaryLength: 75
+summaryLength: 10
 
 defaultContentLanguage: en
 hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
