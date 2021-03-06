@@ -15,7 +15,6 @@ lastmod: '2019-03-09'
 draft: false
 ---
 
-![image-20210204094511491](C:\Users\bitliu\AppData\Roaming\Typora\typora-user-images\image-20210204094511491.png)
 
 很多人应该像我一样，第一次接触 docker 的概念，都会见到或者听过下面这句话：
 
