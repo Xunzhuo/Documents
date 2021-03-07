@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/951c4fb2-6003-40f1-8bf4-350365390ba8/deploy-status)](https://app.netlify.com/sites/bitliu/deploys)
+
 English | [简体中文](https://github.com/wangchucheng/hugo-eureka/blob/master/README.zh.md)
 
 # Eureka
